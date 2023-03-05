@@ -63,6 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         page = FavoritesPage();
         break;
+      case 2:
+        page = IdeasPage();
+        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -82,6 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   NavigationRailDestination(
                     icon: Icon(Icons.favorite),
                     label: Text('Favorites'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.branding_watermark),
+                    label: Text('Ideas'),
                   ),
                 ],
                 selectedIndex: selectedIndex,
@@ -173,6 +180,20 @@ class FavoritesPage extends StatelessWidget {
             title: Text(pair.asLowerCase),
           ),
       ],
+    );
+  }
+}
+
+class IdeasPage extends StatelessWidget {
+  const IdeasPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [Text('data')],
+      ),
     );
   }
 }
